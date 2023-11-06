@@ -1,134 +1,176 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import './App.css';
 
-function Anmeldeformular() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [formData, setFormData] = useState({
-    name: '',
-    nachname: '',
-    telefonnummer: '',
-    email: '',
-    anzahlPersonen: '',
-    datum: '',
-    uhrzeit: '',
-    mahlzeit: '',
-    bemerkungWuensche: '',
-  });
+const MultiStepForm = () => {
+const [formData, setFormData] = useState({
+   name: '',
+   nachname: '',
+   email: '',
+   phone: '',
+   date: '',
+   time: '',
+   persons: '',
+   message: '',
+});
 
-  const nextPage = () => {
-    setCurrentPage(currentPage + 1);
-  };
+const [currentStep, setCurrentStep] = useState(1);
 
-  const prevPage = () => {
-    setCurrentPage(currentPage - 1);
-  };
+const handleChange = (e) => {
+   const { name, value } = e.target;
+   setFormData({ ...formData, [name]: value });
+};
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+const nextStep = () => {
+   setCurrentStep(currentStep + 1);
+};
 
-  function DateInput() {
-    const [currentDate, setCurrentDate] = useState('');
+const prevStep = () => {
+   setCurrentStep(currentStep - 1);
+};
 
-    useEffect(() => {
-      const now = new Date();
+const handleSubmit = (e) => {
+   e.preventDefault();
+   console.log(formData);
+};
 
-      const year = now.getFullYear();
-      const month = String(now.getMonth() + 1).padStart(2, '0');
-      const day = String(now.getDate()).padStart(2, '0');
-      const formattedCurrentDate = `${year}-${month}-${day}`;
+const renderSwitch = (param) => {
+   switch (param) {
+     case 1:
+       return (
+         <>
+         <div className='title-tisch'>
+          <h2>Tischreservation</h2>
+          <div className='underline-title'/>
+        </div>
+         <br />
+          <label className='input-title'>Name:</label>
+          <div className='underline-name'/>
+          <div />
+           <input
+             type="text"
+             name="name"
+             value={formData.name}
+             onChange={handleChange}
+             placeholder="Your Name"
+             className='input'
+           />
+          <br />
 
-      setCurrentDate(formattedCurrentDate);
-    }, []);
+          <label className='input-title'>Nachname:</label>
+          <div className='underline-nachname'/>
+          <div />
+           <input
+             type="text"
+             name="nachname"
+             value={formData.nachname}
+             onChange={handleChange}
+             placeholder="Dein Nachname"
+             className='input'
+           />
+           <br />
+           <label className='input-title'>E-Mail:</label>
+           <div className='underline-email'/>
+           <input
+             type="email"
+             name="email"
+             value={formData.email}
+             onChange={handleChange}
+             placeholder="Your Email"
+             className='input'
+           />
+           <br />
+           <label className='input-title'>Telefonnummer: </label>
+          <div className='underline-tele'/>
+           <input
+             type="text"
+             name="phone"
+             value={formData.phone}
+             onChange={handleChange}
+             placeholder="Your Phone"
+             className='input'
+           />
+           <br />
+           <div className='right-button'>
+            <button type="button"  className='button' onClick={nextStep}>
+              Next
+            </button>
+           </div>
+           <div className='page'>
+            <div className='subtract'>
+              <p>page 1</p>
+            </div>
+           </div>
 
-    return (
-      <div>
-        {currentPage === 1 && (
-          <div>
-            <h2>Seite 1</h2>
-            <label>Name:</label>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-            />
-            <br />
-            <label>Nachname:</label>
-            <input
-              type="text"
-              name="nachname"
-              value={formData.nachname}
-              onChange={handleChange}
-            />
-            <br />
-            <label>Telefonnummer</label>
-            <input
-              type="tel"
-              name="telefonnummer"
-              value={formData.telefonnummer}
-              onChange={handleChange}
-            />
-            <br />
-            <label>E-Mail</label>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-            />
-            <br />
-            <button onClick={nextPage}>Next</button>
-          </div>
-        )}
+         </>
+       );
+     case 2:
+       return (
+         <>
+          <h2>Tischreservation</h2>
+          <br />
+          <label className='input-title'>Anzahl der Personen: </label>
+           <br />
+           <input
+             type="number"
+             name="persons"
+             value={formData.persons}
+             onChange={handleChange}
+             placeholder="Number of Persons"
+             className='input'
+           />
+          <br />
+          <label >Datum:</label>
+          <br />
+           <input
+             type="date"
+             name="date"
+             value={formData.date}
+             onChange={handleChange}
+             className='input'
+           />
+           <br />
+           <label>Zeit:</label>
+           <br />
+           <input
+             type="time"
+             name="time"
+             value={formData.time}
+             onChange={handleChange}
+             className='input'
+           />
 
-        {currentPage === 2 && (
-          <div>
-            <h2>Seite 2</h2>
-            <label>Anzahl Personen:</label>
-            <input
-              type="text"
-              name="anzahlPersonen"
-              value={formData.anzahlPersonen}
-              onChange={handleChange}
-            />
-            <br />
-            <label>Datum</label>
-            <input
-              type="date"
-              name="datum"
-              min={currentDate}
-              max={currentDate + 10}
-              value={formData.datum}
-              onChange={handleChange}
-            />
-            <br />
-            <label>Mahlzeit</label>
-            <select
-              name="mahlzeit"
-              value={formData.mahlzeit}
-              onChange={handleChange}
-            >
-              <option>Frühstück</option>
-              <option>Mittagessen</option>
-              <option>Abendessen</option>
-              <option>Kaffee und Kuchen</option>
-            </select>
-            <button onClick={prevPage}>Back</button>
-            <button onClick={nextPage}>Next</button>
-          </div>
-        )}
+           <br />
+           <label className='input-title'> Persönliche nachricht:</label>
+           <br />
+           <textarea
+             name="message"
+             value={formData.message}
+             onChange={handleChange}
+             placeholder="Your Message"
+             className='input'
+           />
+           <br />
+           <button type="button" className='button' onClick={prevStep}>
+             Previous
+           </button>
+           <button type="submit" className='button' onClick={handleSubmit}>
+             Submit
+           </button>
+         </>
+       );
 
-        {/* Weitere Seiten hier */}
-      </div>
-    );
-  }
+     default:
+       return null;
+   }
+};
 
-  return (
-    <div>
-      <DateInput />
-    </div>
-  );
-}
+return (
+  <div className='Frame'>
+    <form onSubmit={handleSubmit}>
+      {renderSwitch(currentStep)}
+    </form>
+  </div>
+);
+};
 
-export default Anmeldeformular;
+export default MultiStepForm;
