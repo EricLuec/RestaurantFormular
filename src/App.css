@@ -1,6 +1,9 @@
 .App {
   text-align: center;
   justify-content: center;
+  display: flex;
+  width: 100%;
+  background: gray;
 }
 
 .Frame{
@@ -9,9 +12,8 @@
   border-radius: 24px;
   border: 5px solid #000;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  background: #D9D9D9;
-  justify-content: center;
   display: flex;
+  flex-direction: ;
 }
 
 h1{
@@ -39,5 +41,16 @@ h1{
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
+.back{
+  width: 309px;
+  height: 608px;
+  flex-shrink: 0;
+  border-radius: 24px;
+  background: #D9D9D9;
+}
 
-
+.sub{
+  width: 88px;
+  height: 36px;
+  background: #D9D9D9;
+}
