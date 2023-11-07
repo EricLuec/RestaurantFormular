@@ -40,13 +40,14 @@ const renderSwitch = (param) => {
    switch (param) {
      case 1:
        return (
-         <>
+         <div>
          <div className='title-tisch'>
-          <h2>Tischreservation</h2>
-          <div className='underline-title'/>
+          <h2>Tischreservation
+          <div className='underline-title'/></h2>
+          
         </div>
          <br />
-          <label className='input-title'>Name:</label>
+          <label className='input-title' required>Name *</label>
           <div className='underline-name'/>
           <div />
            <input
@@ -54,12 +55,11 @@ const renderSwitch = (param) => {
              name="name"
              value={formData.name}
              onChange={handleChange}
-             placeholder="Your Name"
              className='input'
            />
           <br />
 
-          <label className='input-title'>Nachname:</label>
+          <label className='input-title' required >Nachname *</label>
           <div className='underline-nachname'/>
           <div />
            <input
@@ -67,29 +67,26 @@ const renderSwitch = (param) => {
              name="nachname"
              value={formData.nachname}
              onChange={handleChange}
-             placeholder="Dein Nachname"
              className='input'
            />
            <br />
-           <label className='input-title'>E-Mail:</label>
+           <label className='input-title' required>E-Mail *</label>
            <div className='underline-email'/>
            <input
              type="email"
              name="email"
              value={formData.email}
              onChange={handleChange}
-             placeholder="Your Email"
              className='input'
            />
            <br />
-           <label className='input-title'>Telefonnummer: </label>
+           <label className='input-title'>Telefonnummer </label>
           <div className='underline-tele'/>
            <input
              type="text"
              name="phone"
              value={formData.phone}
              onChange={handleChange}
-             placeholder="Your Phone"
              className='input'
            />
            <br />
@@ -104,16 +101,16 @@ const renderSwitch = (param) => {
             </div>
            </div>
 
-         </>
+         </div>
        );
      case 2:
        return (
          <>
-          <h2>Tischreservation</h2>
-          <div className='underline-title'/>
-
+          <h2>Tischreservation
+          <div className='underline-title'/></h2>
+          
           <br />
-          <label className='input-title'>Anzahl der Personen: </label>
+          <label className='input-title' required >Anzahl der Personen * </label>
           <div className='underline-anper'/>
 
            <input
@@ -121,15 +118,14 @@ const renderSwitch = (param) => {
              name="persons"
              value={formData.persons}
              onChange={handleChange}
-             placeholder="Number of Persons"
              className='input2'
            />
           <br />
           <div className='date-time'>
-            <label className='input-title' >Datum
+            <label className='input-title' required >Datum *
             <div className='underline-date'/>
             </label>
-            <label className='input-title-time'>Uhrzeit
+            <label className='input-title-time' required >Uhrzeit *
             <div className='underline-fix'>
               <div className='underline-time'/>
             </div>
@@ -152,7 +148,7 @@ const renderSwitch = (param) => {
               className='input-date-time'
             />
           </div>
-          <label className='input-title'>Mahlzeit: </label>
+          <label className='input-title' required >Mahlzeit *</label>
           <div className='underline-mahlzeit'/>
           <select
             type='selct'
@@ -167,13 +163,12 @@ const renderSwitch = (param) => {
           </select>
             
            <br />
-           <label className='input-title'> Persönliche nachricht:</label>
+           <label className='input-title'> Persönliche Nachricht </label>
            <div className='underline-message'/>
            <textarea
              name="message"
              value={formData.message}
              onChange={handleChange}
-             placeholder="Your Message"
              className='input-textarea'
            />
            <br />
@@ -199,11 +194,14 @@ const renderSwitch = (param) => {
 };
 
 return (
-  <div className='Frame'>
-    <form onSubmit={handleSubmit}>
-      {renderSwitch(currentStep)}
-    </form>
+  <div id='screen'>
+    <div className='Frame'>
+      <form onSubmit={handleSubmit}>
+        {renderSwitch(currentStep)}
+      </form>
+    </div>
   </div>
+
 );
 };
 
