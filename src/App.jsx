@@ -35,6 +35,8 @@ const handleSubmit = (e) => {
    console.log(formData);
 };
 
+//test 2 branch
+
 const renderSwitch = (param) => {
    switch (param) {
      case 1:
