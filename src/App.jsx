@@ -11,6 +11,7 @@ const [formData, setFormData] = useState({
    time: '',
    persons: '',
    message: '',
+   mahlzeit: '',
 });
 
 //sieht man das?
@@ -109,55 +110,86 @@ const renderSwitch = (param) => {
        return (
          <>
           <h2>Tischreservation</h2>
+          <div className='underline-title'/>
+
           <br />
           <label className='input-title'>Anzahl der Personen: </label>
-           <br />
+          <div className='underline-anper'/>
+
            <input
              type="number"
              name="persons"
              value={formData.persons}
              onChange={handleChange}
              placeholder="Number of Persons"
-             className='input'
+             className='input2'
            />
           <br />
-          <label >Datum:</label>
-          <br />
-           <input
-             type="date"
-             name="date"
-             value={formData.date}
-             onChange={handleChange}
-             className='input'
-           />
-           <br />
-           <label>Zeit:</label>
-           <br />
-           <input
-             type="time"
-             name="time"
-             value={formData.time}
-             onChange={handleChange}
-             className='input'
-           />
+          <div className='date-time'>
+            <label className='input-title' >Datum
+            <div className='underline-date'/>
+            </label>
+            <label className='input-title-time'>Uhrzeit
+            <div className='underline-fix'>
+              <div className='underline-time'/>
+            </div>
+            </label>
+          </div>
 
+          <div className='date-time-input'>
+            <input
+              type="date"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+              className='input-date-time'
+            />
+            <input
+              type="time"
+              name="time"
+              value={formData.time}
+              onChange={handleChange}
+              className='input-date-time'
+            />
+          </div>
+          <label className='input-title'>Mahlzeit: </label>
+          <div className='underline-mahlzeit'/>
+          <select
+            type='selct'
+            name='mahlzeit'
+            value={formData.mahlzeit}
+            onChange={handleChange}
+            className='input2'
+          >
+            <option>Frühstück</option>
+            <option>Mittagessen</option>
+            <option>Abendessen</option>
+          </select>
+            
            <br />
            <label className='input-title'> Persönliche nachricht:</label>
-           <br />
+           <div className='underline-message'/>
            <textarea
              name="message"
              value={formData.message}
              onChange={handleChange}
              placeholder="Your Message"
-             className='input'
+             className='input-textarea'
            />
            <br />
-           <button type="button" className='button' onClick={prevStep}>
-             Previous
-           </button>
-           <button type="submit" className='button' onClick={handleSubmit}>
-             Submit
-           </button>
+           <div className='side-button'>
+            <button type="button" className='button-pre' onClick={prevStep}>
+              Previous
+            </button>
+            <button type="submit" className='button' onClick={handleSubmit}>
+              Submit
+            </button>
+          </div>
+           <div className='page'>
+            <div className='subtract2'>
+              <p>page 2</p>
+            </div>
+           </div>
          </>
        );
 

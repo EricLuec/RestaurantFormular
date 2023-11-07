@@ -65,7 +65,38 @@ h1{
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   margin-bottom: 37px;
   border-width: 0px;
+}
+.input2 {
+  width: 263px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 24px;
+  background: #F4F4F4;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+  border-width: 0px;
+}
 
+.input-textarea{
+  width: 263px;
+  height: 91px;
+  flex-shrink: 0;
+  border-radius: 24px;
+  background: #F4F4F4;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 47px;
+  border-width: 0px;
+}
+
+.input-date-time{
+  width: 116px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 24px;
+  background: #F4F4F4;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 20px;
+  border-width: 0px;
 }
 
 
@@ -82,6 +113,21 @@ h1{
   display: flex;
   justify-content: right;
   margin-top: 20px;
+}
+
+.side-button{
+  display: flex;
+
+  justify-content: space-between;
+  margin-top: 6px;  
+}
+
+.button-pre{
+  width: 105px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 25px;
+  background: #677B98;
 }
 
 .button-text {
@@ -115,6 +161,23 @@ h1{
   font-weight: 600;
   line-height: normal;
   border-color: #D9D9D9;
+}
+.input-title-time{
+  width: 100px;
+  height: 26px;
+  flex-shrink: 0;
+  margin-left: 18px;
+  color: #000;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Inter;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  border-color: #D9D9D9;
+  text-align: right;
+  margin-right: 18px;
+
 }
 
 
@@ -164,6 +227,52 @@ h1{
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   margin-bottom: 6px;
 }
+.underline-date {
+  width: 46px;
+  height: 3px;
+  flex-shrink: 0;
+  background: #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 6px;
+
+}
+.underline-time {
+  width: 46px;
+  height: 3px;
+  flex-shrink: 0;
+  background: #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 6px;
+}
+.underline-mahlzeit {
+  width: 63px;
+  height: 3px;
+  flex-shrink: 0;
+  background: #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 6px;
+  margin-left: 18px;
+
+}
+.underline-message {
+  width: 183px;
+  height: 3px;
+  flex-shrink: 0;
+  background: #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 6px;
+  margin-left: 18px;
+
+}
+.underline-anper {
+  width: 123px;
+  height: 3px;
+  flex-shrink: 0;
+  background: #000;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin-bottom: 6px;
+  margin-left: 18px;
+}
 
 h2{
   color: #000;
@@ -189,6 +298,7 @@ h2{
   
 }
 
+
 .subtract{
   background: #e6e4e1;
   display: flex;
@@ -197,4 +307,27 @@ h2{
   height: 5px;
   flex-direction: column;
   align-items: center;
+}
+.subtract2{
+  background: #e6e4e1;
+  display: flex;
+  justify-content: center;
+  width: 80px;
+  height: 6px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date-time {
+  display: flex;
+  justify-content: space-between;
+}
+.date-time-input{
+  display: flex;
+  justify-content: space-between;
+}
+
+.underline-fix{
+  display: flex;
+  justify-content: right;
 }
