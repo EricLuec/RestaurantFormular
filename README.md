@@ -5,12 +5,13 @@ Es ist im Branch namens ..... zu finden.
 
 # Table of Contents
 
-1. [Funktionalität und Anleitung](#Funktionalität-Anleitung)
-2. [Design](#design)
-3. [Kontakt](#kontakt)
+1. [Anleitung](#Anleitung)
+2. [Funktion](#funktion)
+3. [Design](#design)
+4. [Kontakt](#kontakt)
 
 
-# Funktionalität, Anleitung
+# Anleitung
 
 Das Projekt lässt sich pullen, runterladen und mit ssh öffnen. Eventuell fehlen noch einige Node-Modules, welche sich mit npm i nachinstallieren lassen.
 ```bash
@@ -20,7 +21,13 @@ Danach standartmässig mit
 ```bash
 npm start
 ```
-Die Applikation starten 
+Die Applikation starten. Es öffnet sich ein Formular. Dies gilt auszufüllen. Nach drücken des Submit-Buttons, werden die Eingaben abgeschickt.
+
+#Funktion
+
+Das Formular ist vollkommen responsive, Es speichert die Eingebenen Werte in Variabeln und hat eine zweite Seite, damit die Applikation übersichtlich bleibt. Die Speicherung als Variabel ermöglicht auch eine Anknüpfung an ein Backend,
+(was wir ja auch gemacht haben). 
+
 # Design
 
 Hier finden sie den Link zu unserem [Design](https://www.figma.com/file/bSPTLWguMkYnjmX8QjE2K5/Figma-basics?type=design&node-id=501-11&mode=design)
