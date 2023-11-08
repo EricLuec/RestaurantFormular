@@ -23,7 +23,7 @@ npm start
 ```
 Die Applikation starten. Es öffnet sich ein Formular. Dies gilt auszufüllen. Nach drücken des Submit-Buttons, werden die Eingaben abgeschickt.
 
-#Funktion
+# Funktion
 
 Das Formular ist vollkommen responsive, Es speichert die Eingebenen Werte in Variabeln und hat eine zweite Seite, damit die Applikation übersichtlich bleibt. Die Speicherung als Variabel ermöglicht auch eine Anknüpfung an ein Backend,
 (was wir ja auch gemacht haben). 
