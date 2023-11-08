@@ -1,11 +1,20 @@
 # RestaurantFormular 
 
-Dies ist der erste Teil unseres Projekts. Der Master-Branch beeinhaltet alles notwendige / relevante für die Bewertung.
+Dies ist der erste Teil unseres Projekts. Der Master-Branch beeinhaltet alles notwendige / relevante für die Bewertung. Jedoch haben wir uns entschieden, eine zweite Version des Projekts zu erstellen und diese mit einem funktionalen Backend zu versehen.
+Es ist im Branch namens ..... zu finden. 
 
+
+
+# Funktionalität, Anleitung
+
+Das Projekt lässt sich pullen, runterladen und mit ssh öffnen. Eventuell fehlen noch einige Node-Modules, welche sich mit npm i nachinstallieren lassen.
+```bash
+npm i
+```
 
 # Design
 
-Hier finden sie den Link zu unserem [design](https://www.figma.com/file/bSPTLWguMkYnjmX8QjE2K5/Figma-basics?type=design&node-id=501-11&mode=design)
+Hier finden sie den Link zu unserem [Design](https://www.figma.com/file/bSPTLWguMkYnjmX8QjE2K5/Figma-basics?type=design&node-id=501-11&mode=design)
 
 Und hier Screenshots von der Umsetzung:
 
