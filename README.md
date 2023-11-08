@@ -1,6 +1,6 @@
 # RestaurantFormular 
 
-Dies ist der erste Teil unseres Projekts. Der Master-Branch beeinhaltet alles notwendige / relevante für die Bewertung. Jedoch haben wir uns entschieden, eine zweite Version des Projekts zu erstellen und diese mit einem funktionalen Backend zu versehen.
+Dies ist der erste Teil unseres Projekts. Der Master-Branch beeinhaltet alles notwendige / relevante für die Bewertung. On top haben wir uns entschieden, eine zweite Version des Projekts zu erstellen und diese mit einem funktionalen Backend zu versehen.
 Dieses Vorhaben ist jedoch gescheitert. Bei Bedarf können wir gerne unsere Ansätze darlegen.
 
 # Table of Contents
