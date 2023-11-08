@@ -55,7 +55,7 @@ const [maxDate, setMaxDate] = useState('');
 useEffect(() => {
   const today = new Date();
   const maxDate = new Date(today);
-  maxDate.setDate(today.getDate() + 14); // Two weeks from today
+  maxDate.setDate(today.getDate() + 14);
   const minDate = today.toISOString().split('T')[0];
   const maxDateString = maxDate.toISOString().split('T')[0];
   setMinDate(minDate);
