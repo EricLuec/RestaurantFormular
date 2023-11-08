@@ -38,13 +38,13 @@ body {
   align-items: center;
   background: #e6e4e1;
   transform-origin: center center;
-  transform:scale(2);
+  transform:scale(1.6);
 
  }
 
  @media only screen and (max-width: 1024px) {
   .Frame{
-    transform:scale(1.8);
+    transform:scale(1.9);
   }
  }
  @media only screen and (max-width: 820px) {
@@ -83,11 +83,6 @@ body {
     transform:scale(0.8);
   }
  }
-
-
-
-
- 
 
 h1{
   display: flex;
@@ -173,6 +168,7 @@ h1{
   flex-shrink: 0;
   border-radius: 25px;
   background: #677B98;
+  color: #FFF;
 }
 
 .right-button {
@@ -183,7 +179,6 @@ h1{
 
 .side-button{
   display: flex;
-
   justify-content: space-between;
   margin-top: 6px;  
 }
@@ -194,6 +189,7 @@ h1{
   flex-shrink: 0;
   border-radius: 25px;
   background: #677B98;
+  color: white;
 }
 
 .button-text {
@@ -239,7 +235,6 @@ h1{
   border-color: #D9D9D9;
   text-align: right;
   margin-right: 18px;
-
 }
 
 
@@ -301,12 +296,13 @@ h1{
   margin-bottom: 6px;
 }
 .underline-time {
-  width: 46px;
+  width: 53px;
   height: 3px;
   flex-shrink: 0;
   background: #000;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   margin-bottom: 6px;
+  margin-right: 8px;
 }
 .underline-mahlzeit {
   width: 63px;
@@ -319,7 +315,7 @@ h1{
 
 }
 .underline-message {
-  width: 183px;
+  width: 148px;
   height: 3px;
   flex-shrink: 0;
   background: #000;

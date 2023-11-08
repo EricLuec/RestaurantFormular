@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
 import './App.css';
+import React, { useState, useEffect } from 'react';
+
 
 const MultiStepForm = () => {
 const [formData, setFormData] = useState({
@@ -17,10 +18,16 @@ const [formData, setFormData] = useState({
 //sieht man das?
 
 const [currentStep, setCurrentStep] = useState(1);
-
 const handleChange = (e) => {
-   const { name, value } = e.target;
-   setFormData({ ...formData, [name]: value });
+  const { name, value } = e.target;
+  let updatedValue = value;
+
+  if (name === 'persons') {
+    const numericValue = parseInt(value, 10);
+    updatedValue = !isNaN(numericValue) ? Math.min(Math.max(numericValue, 0), 15) : '';
+  } else if (name === 'date') {
+  }
+  setFormData({ ...formData, [name]: updatedValue });
 };
 
 const nextStep = () => {
@@ -34,7 +41,26 @@ const prevStep = () => {
 const handleSubmit = (e) => {
    e.preventDefault();
    console.log(formData);
+   alert("Name: " + formData.name + "\n Nachname: " + formData.nachname + "\n E-mail: " + formData.email + "\n Telefonnummer: " + formData.phone + "\n Datum: " + formData.date + "\n Zeit: " +  formData.time + "\n Anzahl Personen: " + formData.persons + "\n Persönliche Nachricht: " + formData.message + "\n Mahlzeit: " + formData.mahlzeit);
 };
+
+const [minDate, setMinDate] = useState('');
+useEffect(() => {
+  const today = new Date();
+  const minDate = today.toISOString().split('T')[0];
+  setMinDate(minDate);
+}, []);
+
+const [maxDate, setMaxDate] = useState('');
+useEffect(() => {
+  const today = new Date();
+  const maxDate = new Date(today);
+  maxDate.setDate(today.getDate() + 14); // Two weeks from today
+  const minDate = today.toISOString().split('T')[0];
+  const maxDateString = maxDate.toISOString().split('T')[0];
+  setMinDate(minDate);
+  setMaxDate(maxDateString);
+}, []);
 
 const renderSwitch = (param) => {
    switch (param) {
@@ -47,7 +73,7 @@ const renderSwitch = (param) => {
           
         </div>
          <br />
-          <label className='input-title' required>Name *</label>
+          <label className='input-title' >Name *</label>
           <div className='underline-name'/>
           <div />
            <input
@@ -56,10 +82,11 @@ const renderSwitch = (param) => {
              value={formData.name}
              onChange={handleChange}
              className='input'
+             required
            />
           <br />
 
-          <label className='input-title' required >Nachname *</label>
+          <label className='input-title'  >Nachname *</label>
           <div className='underline-nachname'/>
           <div />
            <input
@@ -68,9 +95,10 @@ const renderSwitch = (param) => {
              value={formData.nachname}
              onChange={handleChange}
              className='input'
+             required
            />
            <br />
-           <label className='input-title' required>E-Mail *</label>
+           <label className='input-title' >E-Mail *</label>
            <div className='underline-email'/>
            <input
              type="email"
@@ -78,6 +106,7 @@ const renderSwitch = (param) => {
              value={formData.email}
              onChange={handleChange}
              className='input'
+             required
            />
            <br />
            <label className='input-title'>Telefonnummer </label>
@@ -110,7 +139,7 @@ const renderSwitch = (param) => {
           <div className='underline-title'/></h2>
           
           <br />
-          <label className='input-title' required >Anzahl der Personen * </label>
+          <label className='input-title'  >Anzahl der Personen * </label>
           <div className='underline-anper'/>
 
            <input
@@ -118,14 +147,16 @@ const renderSwitch = (param) => {
              name="persons"
              value={formData.persons}
              onChange={handleChange}
+             max="15"
              className='input2'
+             required
            />
           <br />
           <div className='date-time'>
-            <label className='input-title' required >Datum *
+            <label className='input-title'  >Datum *
             <div className='underline-date'/>
             </label>
-            <label className='input-title-time' required >Uhrzeit *
+            <label className='input-title-time'  >Uhrzeit *
             <div className='underline-fix'>
               <div className='underline-time'/>
             </div>
@@ -138,7 +169,10 @@ const renderSwitch = (param) => {
               name="date"
               value={formData.date}
               onChange={handleChange}
+              min={minDate}
+              max={maxDate}
               className='input-date-time'
+              required
             />
             <input
               type="time"
@@ -146,9 +180,10 @@ const renderSwitch = (param) => {
               value={formData.time}
               onChange={handleChange}
               className='input-date-time'
+              required
             />
           </div>
-          <label className='input-title' required >Mahlzeit *</label>
+          <label className='input-title'>Mahlzeit *</label>
           <div className='underline-mahlzeit'/>
           <select
             type='selct'
@@ -156,6 +191,7 @@ const renderSwitch = (param) => {
             value={formData.mahlzeit}
             onChange={handleChange}
             className='input2'
+            required
           >
             <option>Frühstück</option>
             <option>Mittagessen</option>
