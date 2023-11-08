@@ -1,7 +1,7 @@
 # RestaurantFormular 
 
 Dies ist der erste Teil unseres Projekts. Der Master-Branch beeinhaltet alles notwendige / relevante für die Bewertung. Jedoch haben wir uns entschieden, eine zweite Version des Projekts zu erstellen und diese mit einem funktionalen Backend zu versehen.
-Es ist im Branch namens ..... zu finden. 
+Dieses Vorhaben ist jedoch gescheitert. Bei Bedarf können wir gerne unsere Ansätze darlegen.
 
 # Table of Contents
 
@@ -25,8 +25,7 @@ Die Applikation starten. Es öffnet sich ein Formular. Dies gilt auszufüllen. N
 
 # Funktion
 
-Das Formular ist vollkommen responsive, Es speichert die Eingebenen Werte in Variabeln und hat eine zweite Seite, damit die Applikation übersichtlich bleibt. Die Speicherung als Variabel ermöglicht auch eine Anknüpfung an ein Backend,
-(was wir ja auch gemacht haben). 
+Das Formular ist vollkommen responsive, Es speichert die Eingebenen Werte in Variabeln und hat eine zweite Seite, damit die Applikation übersichtlich bleibt. Die Speicherung als Variabel ermöglicht auch eine Anknüpfung an ein Backend.
 
 # Design
 
