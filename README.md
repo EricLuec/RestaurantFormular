@@ -33,9 +33,9 @@ Hier finden sie den Link zu unserem [Design](https://www.figma.com/file/bSPTLWgu
 
 Und hier Screenshots von der Umsetzung:
 
+![Screenshot 2023-11-08 140432](https://github.com/EricLuec/RestaurantFormular/assets/129942578/fd268ef4-288a-4965-8fe4-9ca2fad4249e)
+![Screenshot 2023-11-08 140458](https://github.com/EricLuec/RestaurantFormular/assets/129942578/3fb871ac-80fb-4259-9d6e-c52a61bf6502)
 
-![Screenshot (7)](https://github.com/EricLuec/RestaurantFormular/assets/140081980/72138dad-4871-4fe9-9b31-6b4a06b1f0ad)
-![Screenshot (8)](https://github.com/EricLuec/RestaurantFormular/assets/140081980/966a562a-ad0a-4a6f-b20e-65c6397505b8)
 
 
 # Kontakt 
